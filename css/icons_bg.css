@@ -1,0 +1,10 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#icons_bg{
+    background-color: #000;
+    color: #fff;
+}
