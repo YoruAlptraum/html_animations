@@ -1,14 +1,68 @@
 * {
     padding: 0;
     margin: 0;
+    user-select: none;
 }
-
-#icons_bg{
+.green{
     background-color: #111;
-    color: #fff;
+}
+.blue{
+    background-color: #fff;    
+}
+#icons_bg{
     position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+}
+
+#icons_bg .row{
+    position: relative;
+    top: -60%;
+    width: 100%;
+    display: flex;
+    padding: 10px 0;
+    white-space: nowrap;
+    font-size: 64px;
+    transform: rotate(-30deg);
+}
+#icons_bg .row div{
+    animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+    0%{
+        transform: translate(0%);
+    }
+    100%{
+        transform: translate(-100%);
+    }
+}
+
+.green i{
+    color: #010101;
+    transition: 1s;
+    padding: 0 5px;
+    cursor: default;
+}
+
+.blue i{
+    color: #f5f5f5;
+    transition: 1s;
+    padding: 0 5px;
+    cursor: default;
+}
+
+.green i:hover{
+    transition: 0s;
+    color: #0f0;
+    text-shadow: 0 0 120px #0f0;
+}
+
+.blue i:hover{
+    transition: 0s;
+    color: #ee5;
+    text-shadow: 0 0 120px #ee5;
 }
