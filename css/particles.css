@@ -1,0 +1,11 @@
+#text_particles{
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
