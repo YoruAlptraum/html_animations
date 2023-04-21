@@ -29,17 +29,34 @@
     font-size: 64px;
     transform: rotate(-30deg);
 }
-#icons_bg .row div{
-    animation: animate 10s linear infinite;
+
+#icons_bg .row:nth-child(odd) div{
+    animation: animationa 30s linear infinite;
+    animation-delay: -30s;
 }
 
-@keyframes animate {
+
+#icons_bg .row:nth-child(even) div{
+    animation: animationb 30s linear infinite;
+    animation-delay: -30s;
+}
+
+@keyframes animationa {
     0%{
         transform: translate(0%);
     }
     100%{
         transform: translate(-100%);
     }
+}
+
+@keyframes animationb {
+    0%{
+        transform: translate(-100%);
+    }
+    100%{
+        transform: translate(0%);
+    }    
 }
 
 .green i{
