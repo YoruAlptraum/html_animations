@@ -9,19 +9,20 @@ let adjustY = 0;
 //mouse
 const mouse = {
     x: null,
-    y:null,
+    y: null,
     radius: 100
 }
 
 window.addEventListener('mousemove', function(event){
+    let vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     mouse.x = event.x;
-    mouse.y = event.y;
+    mouse.y = event.y - (vh*0.1);
     /* console.log("mouse coordinates", mouse.x, mouse.y); */
 })
 
 ctx.fillStyle = 'white';
 ctx.font = '30px Verdana';
-ctx.fillText('Waifu', 2, 29);
+ctx.fillText('🕷🕸', 2, 29);
 const textCoordinates = ctx.getImageData(0, 0, 170, 35);
 /* visualize the area*/
 ctx.strokeStyle = 'white';
@@ -76,20 +77,22 @@ function init(){
     for(let y = 0, y2 = textCoordinates.height; y < y2; y++){
         for(let x = 0, x2 = textCoordinates.width; x < x2; x++){
             if(textCoordinates.data[(y * 4 * textCoordinates.width) + (x*4)] >128){
-                let spread = 10;
+                let spread = 15;
                 let positionX = (x + adjustX) *spread;
                 let positionY = (y + adjustY) *spread;
                 particleArray.push(new Particle(positionX,positionY));
             }
         }
     }
-    /*Random particles
-     
-    for(let i = 0; i < 500; i++){
+    /*Random particles*/
+    
+    
+    /* for(let i = 0; i < 500; i++){
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
         particleArray.push(new Particle(x, y));
-    } */
+    }  */
+   
 }
 
 function animate(){
@@ -110,8 +113,10 @@ function connect(){
             let dy = particleArray[a].y - particleArray[b].y;
             let distance = Math.sqrt(dx * dx + dy * dy);
             
-            if(distance < 30){
-                opacity = 1 - (distance/30);
+            let minDist = 50;
+            if(distance < minDist){
+                let percent = distance/minDist;
+                opacity = 1 - percent;
                 ctx.strokeStyle = 'rgba(255,255,255,'+opacity+')';
                 ctx.lineWidth = 1;
                 ctx.beginPath();

@@ -1,10 +1,11 @@
-#text_particles{
-    height: 100vh;
+#text_particles {
+    height: 90vh;
     overflow: hidden;
     background-color: #000;
 }
 
 canvas {
+    margin-top: 10vh;
     position: absolute;
     top: 0;
     left: 0;
