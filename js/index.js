@@ -1,12 +1,13 @@
-const links = document.querySelector('#links').querySelector("ol").children;
-console.log(links.length)
+const links = document
+    .querySelector('#links')
+    .querySelector("ol").children;
 
-rgb = [157, 78, 221]
+var basergb = [157, 78, 221]
 /* the percentage to increase for each gradient */
-var percent = (1/(links.length+1));
 
-for(let i = (links.length-1); i >= 0; i--){
-    rgb = rgb.map(rgb => lerp(rgb, percent));
+for(let i = 0; i < links.length; i++){
+    var percent = 0.5 - ((1/(links.length+1)) * i);
+    var rgb = basergb.map(basergb => lerp(basergb, percent));
     links[i].style.backgroundColor = `rgb(${rgb[0]} ${rgb[1]} ${rgb[2]})`;
 }
 

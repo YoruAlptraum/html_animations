@@ -37,6 +37,10 @@ h1 {
     padding: 1rem;
 }
 
+#links ol li:hover{
+    background-color: var(--grad2);
+}
+
 #links a {
     color: var(--text);
     text-decoration: none;
