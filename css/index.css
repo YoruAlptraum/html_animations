@@ -39,10 +39,7 @@ h1 {
     margin: 1rem auto;
     padding: 1rem;
     width: 80vw;
-}
-
-#links ol li:hover{
-    background-color: #5A189A;
+    transition:all .2s;
 }
 
 #links ol li:hover{
