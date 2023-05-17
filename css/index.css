@@ -23,7 +23,7 @@ h1 {
     display: flex;
     flex-direction: column;
     width: 85vw;
-    margin: auto;
+    margin: .5rem auto 2rem auto;
     padding: 1rem 0;
     background-color: var(--grad3);
     box-shadow: 40px 10px 10px var(--grad4);
