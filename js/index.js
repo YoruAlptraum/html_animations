@@ -1,6 +1,5 @@
 const links = document
-    .querySelector('#links')
-    .querySelector("ol").children;
+    .querySelector('#links').children;
 
 var basergb = [157, 78, 221];
 /* the percentage to increase for each gradient */
