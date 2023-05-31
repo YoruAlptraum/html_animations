@@ -19,14 +19,27 @@ h1 {
     text-shadow: 20px 10px 10px var(--grad4);
 }
 
+#bg-links {
+    position: fixed;
+    width: 85vw;
+    height: 90vh;
+    /* color */
+    background-color: var(--grad3);
+    box-shadow: 40px 10px 10px var(--grad4);
+    /* center */
+    left: 50%;
+    top: 52%;
+    transform: translate(-50%,-50%);
+}
+
 #links {
     display: flex;
     flex-direction: column;
-    width: 85vw;
-    margin: .5rem auto 2rem auto;
+    height: 95vh;
     padding: 1rem 0;
-    background-color: var(--grad3);
-    box-shadow: 40px 10px 10px var(--grad4);
+
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 #links a{

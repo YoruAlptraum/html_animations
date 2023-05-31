@@ -1,0 +1,61 @@
+* {
+    --tscale: 1.5;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--grad2); 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track-piece:end {
+    margin-bottom: 5vh; 
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.scroll-item{
+    transform: scale(1.5);
+    opacity: 0;
+}
+
+.scrolled{
+    opacity: 1;
+    animation: shrink .40s ease-in-out both;
+}
+
+.scrolled-out{    
+    opacity: 0;
+    animation: grow .40s ease-in-out both;
+}
+
+/* keyframe animations */
+
+/* slide in from right to left */
+@keyframes shrink {
+    0%{
+        transform: scale(--tscale);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);        
+        opacity: 1;
+    }
+}
+
+@keyframes grow {
+    0%{
+        transform: scale(1);        
+        opacity: 1;
+    }
+    100%{
+        transform: scale(--tscale);
+        opacity: 0;
+    }
+}
